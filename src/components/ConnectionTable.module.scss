@@ -24,8 +24,11 @@
 }
 
 .td {
-  padding: 8px 13px;
+  padding: 8px 8px;
   font-size: 0.9em;
+  max-width: 200px;
+  word-wrap: break-word;
+  word-break: break-all;
   cursor: default;
   &:hover {
     color: var(--color-text-highlight);
@@ -39,7 +42,7 @@
 
 /* download upload td cells */
 .du {
-  text-align: right;
+  text-align: center;
 }
 
 .sortIconContainer {

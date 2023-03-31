@@ -13,16 +13,16 @@ const sortDescFirst = true;
 
 const columns = [
   { accessor: 'id', show: false },
-  { Header: 'c_host', accessor: 'host' },
-  { Header: 'c_process', accessor: 'process' },
   { Header: 'c_type', accessor: 'type' },
-  { Header: 'c_dl', accessor: 'download', sortDescFirst },
-  { Header: 'c_dl_speed', accessor: 'downloadSpeedCurr', sortDescFirst },
-  { Header: 'c_ul', accessor: 'upload', sortDescFirst },
-  { Header: 'c_ul_speed', accessor: 'uploadSpeedCurr', sortDescFirst },
+  { Header: 'c_process', accessor: 'process' },
+  { Header: 'c_host', accessor: 'host' },
   { Header: 'c_rule', accessor: 'rule' },
   { Header: 'c_chains', accessor: 'chains' },
   { Header: 'c_time', accessor: 'start' },
+  { Header: 'c_dl', accessor: 'download', sortDescFirst },
+  { Header: 'c_ul', accessor: 'upload', sortDescFirst },
+  { Header: 'c_dl_speed', accessor: 'downloadSpeedCurr', sortDescFirst },
+  { Header: 'c_ul_speed', accessor: 'uploadSpeedCurr', sortDescFirst },
   { Header: 'c_source', accessor: 'source' },
   { Header: 'c_destination_ip', accessor: 'destinationIP' },
   { Header: 'c_sni', accessor: 'sniffHost' },
@@ -93,7 +93,7 @@ function Table({ data }) {
                     className={cx(
                       s.td,
                       i % 2 === 0 ? s.odd : false,
-                      j >= 2 && j <= 5 ? s.du : false
+                      j >= 6 && j <= 9 ? s.du : false
                     )}
                   >
                     {renderCell(cell, locale)}
