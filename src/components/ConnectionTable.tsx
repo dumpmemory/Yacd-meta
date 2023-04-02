@@ -90,7 +90,11 @@ function Table({ data }) {
                 return (
                   <div
                     {...cell.getCellProps()}
-                    className={cx(s.td, i % 2 === 0 ? s.odd : false, j >= 5 ? s.du : false)}
+                    className={cx(
+                      s.td,
+                      i % 2 === 0 ? s.odd : false,
+                      j >= 5 && j < 10 ? s.du : false
+                    )}
                   >
                     {renderCell(cell, locale)}
                   </div>
