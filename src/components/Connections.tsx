@@ -73,7 +73,7 @@ function filterConns(conns: FormattedConn[], keyword: string) {
           conn.network,
           conn.process,
         ].some((field) => hasSubstring(field, keyword))
-    );
+      );
 }
 
 function formatConnectionDataItem(
@@ -103,7 +103,7 @@ function formatConnectionDataItem(
     upload,
     download,
     start: now - new Date(start).valueOf(),
-    chains: chains.reverse().join(' / '),
+    chains: modifyChains(chains),
     rule: !rulePayload ? rule : `${rule} :: ${rulePayload}`,
     ...metadata,
     host: `${host2}:${destinationPort}`,
@@ -116,6 +116,16 @@ function formatConnectionDataItem(
     destinationIP: remoteDestination || destinationIP || host,
   };
   return ret;
+}
+
+function modifyChains(chains): string {
+  let temp;
+  if (chains.length == 1) {
+    temp = chains;
+  } else {
+    temp = chains.pop() + ' / ' + chains.shift();
+  }
+  return temp;
 }
 
 function renderTableOrPlaceholder(conns: FormattedConn[]) {
