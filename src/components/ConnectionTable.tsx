@@ -14,8 +14,8 @@ const sortDescFirst = true;
 const columns = [
   { accessor: 'id', show: false },
   { Header: 'c_type', accessor: 'type' },
-  { Header: 'c_host', accessor: 'host' },
   { Header: 'c_process', accessor: 'process' },
+  { Header: 'c_host', accessor: 'host' },
   { Header: 'c_rule', accessor: 'rule' },
   { Header: 'c_chains', accessor: 'chains' },
   { Header: 'c_time', accessor: 'start' },
