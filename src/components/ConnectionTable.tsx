@@ -14,8 +14,8 @@ const sortDescFirst = true;
 const columns = [
   { accessor: 'id', show: false },
   { Header: 'c_type', accessor: 'type' },
-  { Header: 'c_process', accessor: 'process' },
   { Header: 'c_host', accessor: 'host' },
+  { Header: 'c_process', accessor: 'process' },
   { Header: 'c_rule', accessor: 'rule' },
   { Header: 'c_chains', accessor: 'chains' },
   { Header: 'c_time', accessor: 'start' },
@@ -86,14 +86,14 @@ function Table({ data }) {
 
             {rows.map((row, i) => {
               prepareRow(row);
-              return row.cells.map((cell, j) => {
+              return row.cells.map((cell) => {
                 return (
                   <div
                     {...cell.getCellProps()}
                     className={cx(
                       s.td,
-                      i % 2 === 0 ? s.odd : false,
-                      j >= 5 && j < 10 ? s.du : false
+                      i % 2 === 0 ? s.odd : false
+                      // j >= 6 && j < 10 ? s.du : true
                     )}
                   >
                     {renderCell(cell, locale)}

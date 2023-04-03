@@ -5,17 +5,18 @@
 }
 
 .th {
-  padding: 8px 8px;
+  padding: 4% 1%;
   height: 50px;
   background: var(--color-background);
   position: sticky;
   top: 0;
   font-size: 1em;
   user-select: none;
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   display: flex;
   align-items: center;
+  // align-items: center;
   justify-content: space-between;
 
   &:hover {
@@ -25,10 +26,12 @@
 
 .td {
   /* 上边下边 | 左边右边 */
-  padding: 5% 3%;
+  padding: 4% 3%;
   font-size: 0.9em;
   max-width: 14em;
-  word-break: break-word;
+  min-width: 8em;
+  word-wrap: break-word;
+  word-break: break-all;
   cursor: default;
   text-align: left;
   vertical-align: middle;
@@ -44,7 +47,9 @@
 
 /* download upload td cells */
 .du {
-  text-align: center;
+  max-width: 4em;
+  // min-width: 8em;
+  text-align: c;
 }
 
 .sortIconContainer {
