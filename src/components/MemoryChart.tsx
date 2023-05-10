@@ -18,9 +18,11 @@ const { useMemo } = React;
 
 const chartWrapperStyle = {
   // make chartjs chart responsive
+  justifySelf: 'center',
   position: 'relative',
-  maxWidth: 1000,
-  marginTop: '1em',
+  width: '100%',
+  height: '200px',
+  borderTop: '1px solid #424242',
 };
 
 const mapState = (s: State) => ({
@@ -55,7 +57,7 @@ function MemoryChart({ apiConfig, selectedChartStyleIndex }) {
   return (
     // @ts-expect-error ts-migrate(2322) FIXME: Type '{ position: string; maxWidth: number; }' is ... Remove this comment to see the full error message
     <div style={chartWrapperStyle}>
-      <canvas id="MemoryChart" />
+      <canvas id="MemoryChart" style={{ width: '100%', height: '100%' }} />
     </div>
   );
 }

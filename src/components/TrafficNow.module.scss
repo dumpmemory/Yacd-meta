@@ -4,10 +4,25 @@
   flex-wrap: wrap;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, 160px);
+  grid-template-columns: 90%;
+  /* 当屏幕宽度大于600像素时，设置为一行两列 */
+  @media only screen and (min-width: 300px) {
+    grid-template-columns: 49% 49%;
+  }
+
+  /* 当屏幕宽度大于720像素时，设置为一行三列 */
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: 31% 31% 31%;
+  }
+  /* 当屏幕宽度大于1000像素时，设置为一行四列 */
+  @media only screen and (min-width: 1000px) {
+    grid-template-columns: 24% 24% 24% 24%;
+  }
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, 15%);
+  }
   grid-gap: 15px;
-  justify-content: center;
-  // max-width: 1000px;
+  justify-content: space-between;
 
   .sec {
     padding: 10px;
@@ -20,7 +35,10 @@
     }
     div:nth-child(2) {
       padding: 10px 0 0;
-      font-size: 1.3em;
+      font-size: 1.2em;
+      @media only screen and (min-width: 720px) {
+        font-size: 1.1em;
+      }
     }
   }
 }
